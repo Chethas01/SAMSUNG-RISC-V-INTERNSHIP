@@ -15,7 +15,10 @@ Samsung semiconductor research india's mini internship 2024 program where we lea
 We have to follow the given steps to compile any *.c* file in our machine:  
 1. Open the terminal and access the leafpad file in which we code the c program. To open leapad run the following command:
 
-```leafpad 1ton.c```
+```
+leafpad 1ton.c
+
+```
 	  
 2. This will open the editor and allows you to write into the file that you have created as sum1ton. Write the following C code of printing the sum of n numbers.
    
