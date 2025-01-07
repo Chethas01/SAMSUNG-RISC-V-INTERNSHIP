@@ -15,17 +15,18 @@ Samsung semiconductor research india's mini internship 2024 program where we lea
 We have to follow the given steps to compile any *.c* file in our machine:  
 1. Open the terminal and access the leafpad file in which we code the c program. To open leapad run the following command:
 
-```leafpad sum1ton.c```
+```leafpad 1ton.c```
 	  
 2. This will open the editor and allows you to write into the file that you have created as sum1ton. Write the following C code of printing the sum of n numbers.
    
 ```
 #include <stdio.h>
     int main() {
-    int n = 15;
-    int sum;
-    sum = n * (n + 1) / 2;
-    printf("The sum of numbers from 1 to %d is: %d\n", n, sum);
+    int sum = 0 , n = 15;
+    for ( i = 1 ; i <= n ; ++i )  {
+    sum += i ;
+    }
+    printf("Sum of numbers from 1 to %d is: %d\n", n, sum);
     return 0;
 }
 ```
@@ -36,7 +37,7 @@ Once you are done with your code, save your file, and then close the editor.
 3. To the C code on your terminal, run the following commands:
 
 ```	
-	gcc sum1ton.c
+	gcc 1ton.c
 	./a.out
 ```
 The output should look like this:
@@ -46,23 +47,24 @@ The output should look like this:
 ### RISCV based LAB
 We have to do the same compilation of our code but this time using RISCV gcc compiler. Follow the given steps:  
 1. Open the terminal and run the given command:  
+```	
+	cat sum1ton.c
+```	
+![cat Command](https://github.com/Chethas01/localrepo/blob/main/Task%201/images/cat%20sum1ton.PNG)
 
-	
-	cat sumn.c
-	
-![cat Command](https://github.com/BRUTAL018/samsung-riscv/blob/main/2.png)
+2. Using the *cat* command, the entire C code will be displayed on the terminal. Now run the following command to compile the code in riscv64 gcc compiler:
 
-2. Using the *cat* command, the entire C code will be displayed on the terminal. Now run the following command to compile the code in riscv64 gcc compiler:  
-
-	
-	riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sumn.o sumn.c
+```
+	riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+```
 	
 3. Open a new terminal and run the given command:    
 
-	
-	riscv64-unknown-elf-objdump -d sumn.o
-	
-![Objdump using -O1 format](https://github.com/BRUTAL018/samsung-riscv/blob/main/3.png)
+```	
+	riscv64-unknown-elf-objdump -d sum1ton.o
+```
+
+![Objdump using -O1 format](https://github.com/Chethas01/localrepo/blob/main/Task%201/images/Capture4.PNG)
 
 4. The Assembly Language code of our C code will be displayed on the terminal. Type /main to locate the main section of our code.  
 
