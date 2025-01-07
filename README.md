@@ -39,7 +39,8 @@ Once you are done with your code, save your file, and then close the editor.
 	gcc sum1ton.c
 	./a.out
 ```
-The output should look like this:	
+The output should look like this:
+<br>
 ![C Code compiled on gcc Compiler](https://github.com/Chethas01/localrepo/blob/main/Task%201/images/output%20sum1to15.png)
 
 ### RISCV based LAB
