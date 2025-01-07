@@ -13,7 +13,7 @@ Samsung semiconductor research india's mini internship 2024 program where we lea
 
 ### C Language based LAB
 We have to follow the given steps to compile any *.c* file in our machine:  
-1. Open the terminal and access the leafpad file in which we code the c program. To open leapad run the following command:
+1. Open the terminal and access the leafpad in which we code the c program. To open leapad run the following command:
 
 ```
 leafpad 1ton.c
