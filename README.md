@@ -15,17 +15,32 @@ Samsung semiconductor research india's mini internship 2024 program where we lea
 We have to follow the given steps to compile any *.c* file in our machine:  
 1. Open the terminal and access the leafpad file in which we code the c program. To open leapad run the following command:
 
-	
-	leafpad sumn.c
+```leafpad sum1ton.c```
 	  
-2. This will open the editor and allows you to write into the file that you have created. You have to write the C code of printing the sum of n numbers. Once you are done with your code, press Ctrl + S to save your file, and then press Ctrl + W to close the editor.   
-3. To the C code on your terminal, run the following command:
+2. This will open the editor and allows you to write into the file that you have created as sum1ton. Write the following C code of printing the sum of n numbers.
+   
+```
+#include <stdio.h>
+    int main() {
+    int n = 15;
+    int sum;
+    sum = n * (n + 1) / 2;
+    printf("The sum of numbers from 1 to %d is: %d\n", n, sum);
+    return 0;
+}
+```
+Once you are done with your code, save your file, and then close the editor.   
 
-	
-	gcc sumn.c
+
+  
+3. To the C code on your terminal, run the following commands:
+
+```	
+	gcc sum1ton.c
 	./a.out
-	
-![C Code compiled on gcc Compiler](https://github.com/BRUTAL018/samsung-riscv/blob/main/1.png)
+```
+The output should look like this:	
+![C Code compiled on gcc Compiler]([https://github.com/Chethas01/localrepo/blob/05e8e591a78c1f26cbae7a95a6675e61c17cd464/Task%201/images/output%20sum1to15.png)])
 
 ### RISCV based LAB
 We have to do the same compilation of our code but this time using RISCV gcc compiler. Follow the given steps:  
