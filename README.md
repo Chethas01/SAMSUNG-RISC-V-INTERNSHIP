@@ -48,7 +48,7 @@ The output should look like this:
 ![C Code compiled on gcc Compiler](https://github.com/Chethas01/localrepo/blob/main/Task%201/images/output%20sum1to15.png)
 
 ### RISCV based LAB
-We have to do the same compilation of our code but this time using RISCV gcc compiler. Follow the given steps:  
+We have to do the same compilation of our code but this time using RISCV gcc compiler. Follow the given commands:  
 1. Open the terminal and run the given command:  
 ```	
 	cat sum1ton.c
