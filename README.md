@@ -52,10 +52,13 @@ We have to do the same compilation of our code but this time using RISCV gcc com
 1. Open the terminal and run the given command:  
 ```	
 	cat sum1ton.c
-```	
+```
+<br>	
 ![cat Command](https://github.com/Chethas01/localrepo/blob/main/Task%201/images/cat%20sum1ton.PNG)
+<br>
+Using the *cat* command, the entire C code will be displayed on the terminal.
 
-2. Using the *cat* command, the entire C code will be displayed on the terminal. Now run the following command to compile the code in riscv64 gcc compiler:
+2. Now run the following command to compile the code in riscv64 gcc compiler:
 
 ```
 	riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
