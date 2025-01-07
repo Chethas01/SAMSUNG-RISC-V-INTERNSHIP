@@ -40,7 +40,7 @@ Once you are done with your code, save your file, and then close the editor.
 	./a.out
 ```
 The output should look like this:	
-![C Code compiled on gcc Compiler]([https://github.com/Chethas01/localrepo/blob/05e8e591a78c1f26cbae7a95a6675e61c17cd464/Task%201/images/output%20sum1to15.png)])
+![C Code compiled on gcc Compiler](https://github.com/Chethas01/localrepo/blob/main/Task%201/images/output%20sum1to15.png)
 
 ### RISCV based LAB
 We have to do the same compilation of our code but this time using RISCV gcc compiler. Follow the given steps:  
