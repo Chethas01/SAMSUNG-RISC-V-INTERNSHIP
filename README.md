@@ -56,6 +56,7 @@ We have to do the same compilation of our code but this time using RISCV gcc com
 <br>	
 ![cat Command](https://github.com/Chethas01/localrepo/blob/main/Task%201/images/cat%20sum1ton.PNG)
 <br>
+
 Using the *cat* command, the entire C code will be displayed on the terminal.
 
 2. Now run the following command to compile the code in riscv64 gcc compiler:
