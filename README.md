@@ -90,3 +90,66 @@ Using the *cat* command, the entire C code will be displayed on the terminal.
 
 Here, the term *more aggressive optimization* in the context of compilers like GCC refers to a deeper and more complex set of transformations applied to the code in order to improve its performance and possibly reduce its size. The compiler uses more complex techniques that aims to generate faster executing code or code that occupies less memory. However, these optimizations typically increase the compilation time and can sometimes introduce bugs, making it harder to debug.
 </details>
+
+<details>
+<summary><b>Task 2:</b> Performing SPIKE Simulation and Debugging the C code with Interactive Debugging Mode using Spike</summary> 
+
+
+  
+### What is SPIKE in RISCV?
+> SPIKE is the RISC-V Reference Simulator: It is the official software simulator for RISC-V, providing a platform to simulate and test RISC-V instructions and architectures.
+> * Spike is a free, open-source C++ simulator for the RISC-V ISA that models a RISC-V core and cache system. It can be used to run programs and a Linux kernel, and can be a starting point for running software on a RISC-V target.
+> * SPIKE executes RISC-V instructions and emulates their behavior to verify correctness, making it a tool for hardware and software co-design. 
+> * Key Features: It supports various RISC-V features, including multiple privilege levels, instruction set extensions, and configurable core architectures, facilitating debugging and validation of RISC-V implementations.
+
+#### *To run the spike operations, let's install the tools and libraries required.*  
+
+*Use the following command to install **SPIKE** in your machine*  
+```
+$ git clone https://github.com/riscv/riscv-isa-sim.git  
+$ cd riscv-isa-sim  
+$ mkdir build  
+$ cd build  
+$ sudo apt-get install device-tree-compiler // to install the missing dependencies   
+$ sudo apt-get install libboost-all-dev // to install the libboost library
+$ ../configure --prefix=/opt/riscv  
+$ make  
+$ sudo make install  
+$ sudo apt update  
+$ sudo apt install g++-8
+$ make CXX=g++-8  
+$ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
+$ source ~/.bashrc  
+```
+#### What this code does? 
+>*This script sets up the RISC-V SPIKE simulator by cloning its source code from GitHub and preparing a build directory. It installs necessary dependencies like the device tree compiler and Boost libraries, then configures the build system to install the simulator in the /opt/riscv directory. After compiling and installing the simulator, it ensures GCC version 8 is used for compatibility. Finally, it updates the system's PATH environment variable to include the SPIKE binary directory, allowing the simulator to be accessed from any location in the terminal. This process enables users to simulate and debug RISC-V instructions effectively.*
+  
+### What is PK (Proxy Kernel)?  
+* Proxy Kernel is a lightweight operating system environment for RISC-V that provides basic services like handling system calls, enabling user-level programs to run without a full operating system.  
+* A Proxy Kernel in the RISC-V ecosystem simplifies the interaction between complex hardware and the software running on it, making it easier to manage, test, and develop software and hardware projects.
+* It is primarily used with RISC-V simulators (like SPIKE) and hardware to test and debug applications in a simplified kernel environment, bridging the gap between bare-metal and full OS setups.
+
+*Use the following command to install **pk** in your machine*  
+```
+Make sure you are on home directory  
+$ git clone https://github.com/riscv/riscv-pk.git  
+$ cd riscv-pk  
+$ mkdir build  
+$ cd build  
+$ ../configure --prefix=/opt/riscv --host=riscv64-unknown-elf --with-arch=rv64gc  
+$ make  
+$ sudo make install  
+```
+#### What this code does? 
+>This script sets up the RISC-V Proxy Kernel (PK) by cloning its source code from GitHub and preparing a build directory. It configures the build system for the 64-bit RISC-V architecture (`rv64gc`) with a target installation path of `/opt/riscv`. After compiling the source code, it installs the Proxy Kernel binaries in the specified directory. This enables the use of PK as a lightweight operating environment for running RISC-V applications on simulators or hardware.
+
+### Using the SPIKE Simulator  
+The target is to run the ```sum1ton.c``` code using both ```gcc compiler``` and ```riscv compiler```, and both of the compiler must display the same output on the terminal. So to compile the code using **gcc compiler**, use the following command:  
+```
+gcc sum1ton.c  
+./a.out
+```
+And to compile the code using **riscv compiler**, use the following command:  
+```
+spike pk sum_1ton.o
+```
