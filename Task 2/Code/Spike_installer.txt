@@ -1,1 +1,14 @@
-
+git clone https://github.com/riscv/riscv-isa-sim.git  
+cd riscv-isa-sim  
+mkdir build  
+cd build  
+sudo apt-get install device-tree-compiler // to install the missing dependencies   
+sudo apt-get install libboost-all-dev // to install the libboost library
+../configure --prefix=/opt/riscv  
+make  
+sudo make install  
+sudo apt update  
+sudo apt install g++-8
+make CXX=g++-8  
+echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
+source ~/.bashrc 
