@@ -53,8 +53,8 @@ We have to do the same compilation of our code but this time using RISCV gcc com
 ```	
 	cat sum1ton.c
 ```
-<br>	
-![cat Command](https://github.com/Chethas01/localrepo/blob/main/Task%201/images/cat%20sum1ton.PNG)
+
+![cat_Command](https://github.com/Chethas01/localrepo/blob/main/Task%201/images/cat%20sum1ton.PNG)
 <br>
 
 Using the *cat* command, the entire C code will be displayed on the terminal.
