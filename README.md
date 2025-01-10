@@ -106,20 +106,20 @@ Here, the term *more aggressive optimization* in the context of compilers like G
 
 *Use the following command to install **SPIKE** in your machine*  
 ```
-$ git clone https://github.com/riscv/riscv-isa-sim.git  
-$ cd riscv-isa-sim  
-$ mkdir build  
-$ cd build  
-$ sudo apt-get install device-tree-compiler // to install the missing dependencies   
-$ sudo apt-get install libboost-all-dev // to install the libboost library
-$ ../configure --prefix=/opt/riscv  
-$ make  
-$ sudo make install  
-$ sudo apt update  
-$ sudo apt install g++-8
-$ make CXX=g++-8  
-$ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
-$ source ~/.bashrc  
+ git clone https://github.com/riscv/riscv-isa-sim.git  
+ cd riscv-isa-sim  
+ mkdir build  
+ cd build  
+ sudo apt-get install device-tree-compiler // to install the missing dependencies   
+ sudo apt-get install libboost-all-dev // to install the libboost library
+ ../configure --prefix=/opt/riscv  
+ make  
+ sudo make install  
+ sudo apt update  
+ sudo apt install g++-8
+ make CXX=g++-8  
+ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
+ source ~/.bashrc  
 ```
 #### What this code does? 
 >*This script sets up the RISC-V SPIKE simulator by cloning its source code from GitHub and preparing a build directory. It installs necessary dependencies like the device tree compiler and Boost libraries, then configures the build system to install the simulator in the /opt/riscv directory. After compiling and installing the simulator, it ensures GCC version 8 is used for compatibility. Finally, it updates the system's PATH environment variable to include the SPIKE binary directory, allowing the simulator to be accessed from any location in the terminal. This process enables users to simulate and debug RISC-V instructions effectively.*
@@ -132,13 +132,13 @@ $ source ~/.bashrc
 *Use the following command to install **pk** in your machine*  
 ```
 Make sure you are on home directory  
-$ git clone https://github.com/riscv/riscv-pk.git  
-$ cd riscv-pk  
-$ mkdir build  
-$ cd build  
-$ ../configure --prefix=/opt/riscv --host=riscv64-unknown-elf --with-arch=rv64gc  
-$ make  
-$ sudo make install  
+ git clone https://github.com/riscv/riscv-pk.git  
+ cd riscv-pk  
+ mkdir build  
+ cd build  
+ ../configure --prefix=/opt/riscv --host=riscv64-unknown-elf --with-arch=rv64gc  
+ make  
+ sudo make install  
 ```
 #### What this code does? 
 >This script sets up the RISC-V Proxy Kernel (PK) by cloning its source code from GitHub and preparing a build directory. It configures the build system for the 64-bit RISC-V architecture (`rv64gc`) with a target installation path of `/opt/riscv`. After compiling the source code, it installs the Proxy Kernel binaries in the specified directory. This enables the use of PK as a lightweight operating environment for running RISC-V applications on simulators or hardware.
@@ -179,3 +179,18 @@ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 riscv64-unknown-elf-objdump -d sum1ton.o | less
 ```
 ![O1 object dump](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%202/Images/obj%20dump%20Ofast.png)
+
+### Debugging the Assembly Language Program of  ```sum1ton.c```  
+* Open the **Objdump** of code by using the following command  
+```
+riscv64-unknown-elf-objdump -d sum1ton.o | less  
+```
+* Open the debugger in another terminal by using the following command  
+```
+spike -d pk sum1ton.o
+```
+* The debugger will be opened in the terminal. Now, debugging operations can be performed as shown in the following snapshot.
+
+![Debugging](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%202/Images/debug.PNG) 
+
+</details>
