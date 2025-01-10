@@ -161,6 +161,8 @@ spike pk sum1ton.o
 *Use the following code for 01 object dump:*
 ```
 riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+riscv64-unknown-elf-objdump -d sum1ton.o
+
 ```
 *To diplay less information use the below code*
 ```
@@ -173,6 +175,7 @@ riscv64-unknown-elf-objdump -d sum1ton.o | less
 *Use the following code for 01 object dump:*
 ```
 riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+riscv64-unknown-elf-objdump -d sum1ton.o
 ```
 *To diplay less information use the below code*
 ```
