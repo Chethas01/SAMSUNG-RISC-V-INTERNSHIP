@@ -1,0 +1,7 @@
+git clone https://github.com/riscv/riscv-pk.git  
+ cd riscv-pk  
+ mkdir build  
+ cd build  
+ ../configure --prefix=/opt/riscv --host=riscv64-unknown-elf --with-arch=rv64gc  
+ make  
+ sudo make install
