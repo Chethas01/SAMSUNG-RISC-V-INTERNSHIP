@@ -151,5 +151,31 @@ gcc sum1ton.c
 ```
 And to compile the code using **riscv compiler**, use the following command:  
 ```
-spike pk sum_1ton.o
+spike pk sum1ton.o
 ```
+
+![SPIKE RESULTS](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%202/Images/spike%20test.png)
+<br>
+
+### RISCV Objdump with -O1 option
+*Use the following code for 01 object dump:*
+```
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+```
+*To diplay less information use the below code*
+```
+riscv64-unknown-elf-objdump -d sum1ton.o | less
+```
+![O1 object dump](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%202/Images/obj%20dump%20O1.png)
+<br>
+
+### RISCV Objdump with -Ofast option
+*Use the following code for 01 object dump:*
+```
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+```
+*To diplay less information use the below code*
+```
+riscv64-unknown-elf-objdump -d sum1ton.o | less
+```
+![O1 object dump](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%202/Images/obj%20dump%20Ofast.png)
