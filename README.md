@@ -454,6 +454,39 @@ Here, the destination is zero (x0), effectively discarding the return address.
 >* imm[11:0] = 0 (in binary: 0000 0000 0000).
 #### 32-bit instruction:`000000000000_00000_000_00000_1100111`
 ---
+### 14. `ret`
+* Explanation:
+>* The ret (Return) instruction is a pseudo-instruction in RISC-V. It is equivalent to `jalr zero, ra, 0`
+>* It belongs to the **`I-type`** instruction set.
+>* The return address (ra, register x1) contains the address to return to after a function call.
+>* Since the destination is zero (x0), no link value is stored.
+* Instruction fields:
+>* Opcode for jalr = 1100111
+>* func3: 000
+>* rd (destination) = zero = x0 = 00000
+>* rs1 (base register): ra = x1 = 00001
+>* func3 = 000
+>* imm[11:0] = 0 (in binary: 0000 0000 0000).
+#### 32-bit instruction:`000000000000_00001_000_00000_1100111`
+---
+
+### 15. `sb a5, 1944(gp)`
+* Explanation:
+>* The sb (Store Byte) instruction stores the least significant byte (8 bits) from the source register (a5) into memory at an address calculated as the base address in the register (gp) plus an immediate offset (1944).
+>* It belongs to the **`S-type`** instruction set.
+* Instruction fields:
+>* Opcode: 0100011 (for store instructions)
+>* func3: 000 (for sb)
+>* rs1 (base register): gp = x3 = 00011
+>* rs2 (source register): a5 = x15 = 01111
+>* imm[11:5]: Upper 7 bits of the immediate value 1944 = 1111001
+>* imm[4:0]: Lower 5 bits of the immediate value 1944 = 01000
+* Immediate value breakdown:
+>* 1944 in binary (12 bits): 0111 1001 1000
+>* Upper 7 bits (imm[11:5]): 0111100
+>* Lower 5 bits (imm[4:0]): 11000 
+#### 32-bit instruction:`0111100_01111_00011_000_11000_0100011`
+---
 
 
 </details>
