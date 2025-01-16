@@ -396,7 +396,7 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 ### 10. ```sub a2, a2, a0```
 * Explanation:
 >* The sub (Subtract) instruction subtracts the value in the second source register (a0) from the value in the first source register (a2) and stores the result in the destination register (a2).
->* It belongs to the ```**R-type**``` instruction set.
+>* It belongs to the **`R-type`** instruction set.
 >* a2 (x12) is both the destination and first source register.
 >* a0 (x10) is the second source register.
 * Instruction fields:
