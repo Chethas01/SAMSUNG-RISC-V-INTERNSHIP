@@ -261,25 +261,174 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 ## Now let's analyse each instruction given to us one by one
 
 ### 1.  ``` lui a2, 0x1```
-* The lui (Load Upper Immediate) instruction is used to load a 20-bit immediate value into the upper 20 bits of the destination register.
-* It belongs to the <b>``` U-type ```</b> instruction set.
-* a2 (x12) is the destination register.
-* The immediate value is 0x1 (20 bits: 0000 0000 0000 0000 0001).
-* Instruction fields:Opcode for lui = 0110111
-* rd (destination) = a2 = x12 = 01100
-* imm[31:12] = 0x1 (in binary: 0000 0000 0000 0000 0001)
-## 32-bit instruction:```00000000000000000001_01100_0110111```
+* Explanation:
+>* The lui (Load Upper Immediate) instruction is used to load a 20-bit immediate value into the upper 20 bits of the destination register.
+>* It belongs to the <b>``` U-type ```</b> instruction set.
+>* a2 (x12) is the destination register.
+>* The immediate value is 0x1 (20 bits: 0000 0000 0000 0000 0001).
+* Instruction fields:
+>* Opcode for lui = 0110111
+>* rd (destination) = a2 = x12 = 01100
+>* imm[31:12] = 0x1 (in binary: 0000 0000 0000 0000 0001)
+#### 32-bit instruction:```00000000000000000001_01100_0110111```
 
 ### 2. ``` addi sp, sp, -16 ```
-* The addi (Add Immediate) instruction adds an immediate value to the source register and stores the result in the destination register.
-* It belongs to the <b>``` I-type ```</b> instruction set.
-* sp (x2) is both the source and destination register.
-* The immediate value is -16 (12-bit signed: 1111 1111 1111 0000).
-* Instruction fields:Opcode for addi = 0010011
-* rd (destination) = sp = x2 = 00010
-* rs1 (source) = sp = x2 = 00010
-* func3 = 000
-* imm[11:0] = -16 (in binary: 1111 1111 1111 0000)
-## 32-bit instruction: ```111111111111_00010_000_00010_0010011```
+* Explanation:
+>* The addi (Add Immediate) instruction adds an immediate value to the source register and stores the result in the destination register.
+>* It belongs to the <b>``` I-type ```</b> instruction set.
+>* sp (x2) is both the source and destination register.
+>* The immediate value is -16 (12-bit signed: 1111 1111 1111 0000).
+* Instruction fields:
+>* Opcode for addi = 0010011
+>* rd (destination) = sp = x2 = 00010
+>* rs1 (source) = sp = x2 = 00010
+>* func3 = 000
+>* imm[11:0] = -16 (in binary: 1111 1111 1111 0000)
+#### 32-bit instruction: ```111111111111_00010_000_00010_0010011```
+
+### 3. ``` sd ra, 8(sp) ```
+* Explanation:
+>* The sd (Store Doubleword) instruction stores a doubleword (64 bits) from a source register to memory.
+>* It belongs to the **```S-type```** instruction set.
+>* ra (x1) is the source register.
+>* sp (x2) is the base register for the address.
+>* The immediate value is 8 (split into imm[11:5] and imm[4:0]).
+* Instruction fields:
+>* Opcode for sd = 0100011
+>* rs1 (base register) = sp = x2 = 00010
+>* rs2 (source) = ra = x1 = 00001
+>* func3 = 011
+>* imm[11:5] = 0000000
+>* imm[4:0] = 01000
+#### 32-bit instruction: ``` 0000000_00001_00010_011_01000_0100011 ```
+
+
+### 4. ``` jal ra, 1040c ```
+* EXplanation:
+>* The jal (Jump and Link) instruction jumps to a target address and saves the return address in the destination register.
+>* It belongs to the **```J-type```** instruction set.
+>* ra (x1) is the destination register.
+>* Target address offset = 1040c (adjusted relative offset: 0x40c in 21-bit signed format).
+* Instruction fields:
+>* Opcode for jal = 1101111
+>* rd (destination) = ra = x1 = 00001
+>* imm[20|10:1|11|19:12] = 0000 0000 1000 0011 0000
+#### 32-bit instruction:``` 00000001000000110000_00001_1101111 ```
+
+### 5. ```  ld ra, 8(sp) ```
+* Explanation:
+>* The ld (Load Doubleword) instruction loads a doubleword (64 bits) from memory into the destination register.
+>* It belongs to the **```I-type```** instruction set.
+>* ra (x1) is the destination register.
+>* sp (x2) is the base register for the address.
+>* Immediate value = 8.
+* Instruction fields:
+>* Opcode for ld = 0000011
+>* rd (destination) = ra = x1 = 00001
+>* rs1 (base register) = sp = x2 = 00010
+>* func3 = 011
+>* imm[11:0] = 8 (in binary: 0000 0000 1000)
+#### 32-bit instruction:``` 000000001000_00010_011_00001_0000011 ```
+
+
+### 6. ``` auipc a5, 0xffff0 ```
+* Explanation:
+>* The auipc (Add Upper Immediate to PC) instruction adds a 20-bit immediate value to the current program counter (PC) and stores the result in the destination register.
+>* It belongs to the U-type instruction set.
+>* a5 (x15) is the destination register.
+>* Immediate value = 0xffff0.
+* Instruction fields:
+>* Opcode for auipc = 0010111
+>* rd (destination) = a5 = x15 = 01111
+>* imm[31:12] = 0xffff0 (in binary: 1111 1111 1111 1111 0000)
+#### 32-bit instruction:```11111111111111110000_01111_0010111```
+
+### 7. ``` beqz a5, 100f8  ```
+* Explanation:
+>* The beqz (Branch if Equal to Zero) instruction is a pseudo-instruction for beq a5, zero, offset.
+>* It checks if the value in a5 (x15) equals 0 and branches to the given offset if true.
+>* It belongs to the **```B-type**``` instruction set.
+>* a5 (x15) is the source register.
+>* zero (x0) is the second operand.
+>* Offset = 100f8 (adjusted relative offset: 0x0f8).
+* Instruction fields:
+>* Opcode for beq = 1100011
+>* rs1 = a5 = x15 = 01111
+>* rs2 = zero = x0 = 00000
+>* func3 = 000
+>* imm[12|10:5|4:1|11] = 1001111000 (split: imm[12]=1, imm[10:5]=00111, imm[4:1]=1000, imm[11]=0).
+#### 32-bit instruction: ```1_001111_1000_01111_000_00000_1100011 ```
+
+
+### 8. ```j 101b4 ```
+* Explanation:
+>*  The j (Jump) instruction is a pseudo-instruction for jal zero, offset.
+>*  It unconditionally jumps to the target address while setting zero (x0) as the destination register (effectively discarding the link value).
+>*  It belongs to the **```J-type```** instruction set.
+>*  Target address offset = 101b4 (adjusted relative offset: 0x1b4).
+*  Instruction fields:
+>*  Opcode for jal = 1101111
+>*  rd (destination) = zero = x0 = 00000
+>*  imm[20|10:1|11|19:12] = 1011010010 (split: imm[20]=1, imm[10:1]=011010010, imm[11]=0, imm[19:12]=00000000).
+#### 32-bit instruction:``` 1_0000000_011010010_00000_1101111```
+
+
+### 9. ```sub a2, a2, a0```
+* Explanation:
+>* The sub (Subtract) instruction subtracts the value in the second source register (a0) from the value in the first source register (a2) and stores the result in the destination register (a2).
+>* It belongs to the ```**R-type**``` instruction set.
+>* a2 (x12) is both the destination and first source register.
+>* a0 (x10) is the second source register.
+* Instruction fields:
+>* Opcode for sub = 0110011
+>* rd (destination) = a2 = x12 = 01100
+>* rs1 (source 1) = a2 = x12 = 01100
+>* rs2 (source 2) = a0 = x10 = 01010
+>* func3 = 000
+>* func7 = 0100000
+#### 32-bit instruction: ```0100000_01010_01100_000_01100_0110011```
+
+
+### 10. ```lw a0, 0(sp)```
+* Explanation:
+>* The lw (Load Word) instruction loads a word (32 bits) from memory into the destination register.
+>* It belongs to the **```I-type```** instruction set.
+>* a0 (x10) is the destination register.
+>* sp (x2) is the base register.
+>* Immediate value = 0.
+* Instruction fields:
+>* Opcode for lw = 0000011
+>* rd (destination) = a0 = x10 = 01010
+>* rs1 (base register) = sp = x2 = 00010
+>* func3 = 010
+>* imm[11:0] = 0 (in binary: 0000 0000 0000)
+#### 32-bit instruction:```000000000000_00010_010_01010_0000011```
+
+
+11. lbu a5, 1944(gp)
+Explanation:The lbu (Load Byte Unsigned) instruction loads an 8-bit unsigned value from memory into the destination register.
+It belongs to the I-type instruction set.
+a5 (x15) is the destination register.
+gp (x3) is the base register.
+Immediate value = 1944 (in binary: 0111 1001 1000).
+Instruction fields:Opcode for lbu = 0000011
+rd (destination) = a5 = x15 = 01111
+rs1 (base register) = gp = x3 = 00011
+func3 = 100
+imm[11:0] = 1944.
+32-bit instruction:01111001000_00011_100_01111_0000011
+
+
+12. jalr zero # 0 <main-0x100b0>
+Explanation:The jalr (Jump and Link Register) instruction jumps to an address calculated as rs1 + imm and stores the return address in the destination register.
+Here, the destination is zero (x0), effectively discarding the return address.
+imm = 0 and rs1 = zero (x0).
+Instruction fields:Opcode for jalr = 1100111
+rd (destination) = zero = x0 = 00000
+rs1 (source) = zero = x0 = 00000
+func3 = 000
+imm[11:0] = 0 (in binary: 0000 0000 0000).
+32-bit instruction:000000000000_00000_000_00000_1100111
+   
 
 </details>
