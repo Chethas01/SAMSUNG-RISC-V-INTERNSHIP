@@ -1,0 +1,16 @@
+lui a2,0x1
+addi sp,sp,-16
+li a1,100
+sd ra,8(sp)
+jal ra,1040c <printf>
+ld ra,8(sp)
+auipc a5,0xffff0
+addi a5,a5,-224 # 0 <main-0x100b0>
+beqz a5,100f8 <register_fini+0x18>
+j 101b4 <atexit>
+ret
+sub a2,a2,a0
+lw a0,0(sp)
+lbu a5,1944(gp) # 231a0 <completed.5468>
+bnez a5,1018c <__do_global_dtors_aux+0x4c>
+jalr zero # 0 <main-0x100b0>
