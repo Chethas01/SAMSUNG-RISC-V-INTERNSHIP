@@ -200,7 +200,8 @@ spike -d pk sum1ton.o
 
 <details>
 <summary><b>Task 3:</b> Task is to identify the type of instruction of all codes given with its exact 32 bits of instruction code in the desired instruction type format </summary>
-Let’s discuss each of the instruction formats in detail with examples.
+
+## Types of instructions in RISC-V
 
 ### 1. R-type Instruction
 In RV32, each instruction is of size 32 bits. In R-type instruction, R stands for register which means that operations are carried on the Registers and not on memory location. This instruction type is used to execute various arithmetic and logical operations. The entire 32 bits instruction is divided into 6 fields as shown below.
