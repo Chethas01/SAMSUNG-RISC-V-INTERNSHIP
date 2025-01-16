@@ -290,6 +290,24 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 >* imm[11:0] = -16 (in binary: 1111 1111 1111 0000)
 #### 32-bit instruction: ```111111111111_00010_000_00010_0010011```
 
+
+### Instruction: `addi a1, zero, 100`
+Explanation:
+* The `li` instruction is a **pseudo-instruction** in RISC-V. It is translated into an actual instruction (or a combination of instructions) by the assembler.
+- It belongs to the **I-type instruction set**.
+- a1 (x11) is the destination register.
+- zero (x0) is the source register, which always holds the value 0.
+- The immediate value is 100 (12 bits: 0000 0000 0110 0100)
+Instruction fields:
+- Opcode for addi = 0010011
+- rd (destination) = a1 = x11 = 01011
+- rs1 (source) = zero = x0 = 00000
+- func3 = `000`
+- imm[11:0] = `100` (in binary: `0000 0000 0110 0100`).
+
+#### 32-bit instruction:```000000001100_01011_000_00000_0010011```
+---
+
 ### 3. ``` sd ra, 8(sp) ```
 * Explanation:
 >* The sd (Store Doubleword) instruction stores a doubleword (64 bits) from a source register to memory.
