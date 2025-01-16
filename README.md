@@ -197,3 +197,9 @@ spike -d pk sum1ton.o
 ![Debugging](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%202/Images/debug.PNG) 
 
 </details>
+
+<details>
+<summary><b>Task 3:</b> Task is to identify the type of instruction of all codes given with its exact 32 bits of instruction code in the desired instruction type format </summary>
+
+ 
+</details>
