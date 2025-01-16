@@ -253,5 +253,9 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 * The J-type instruction only consists of single instruction, ```JAL```.
 * J-type instruction encode 20 bits signed immediate which is divided into four fields.
 * The J-type instructions are often used to perform jump to the desired memory location. The address of the desired memory location is defined in the instruction. These instructions are also used to implement loops.
- 
+
+<b>*Refer to the following image for better understanding*</b>
+
+![types of instructions](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%203/types%20of%20instructions.png)
+
 </details>
