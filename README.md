@@ -206,13 +206,12 @@ spike -d pk sum1ton.o
 ### 1. R-type Instruction
 In RV32, each instruction is of size 32 bits. In R-type instruction, R stands for register which means that operations are carried on the Registers and not on memory location. This instruction type is used to execute various arithmetic and logical operations. The entire 32 bits instruction is divided into 6 fields as shown below.
 
-
 * The first field in the instruction format is known as **opcode**, also referred as operation code. The opcode is of length 7 bits and is used to determine the type of instruction format.
 * The next subfield is known as **rd** field which is referred as Destination Register. The rd field is of length 5 bits and is used to store the final result of operation.
 * The next subfield is **func3** also referred as function 3. Here the ‘3’ represents the size of this field. This field tells the detail about the operation, i.e., the type of arithmetic and logical that is performed.
 * The next two subfields are the source registers, **rs1 and rs2** each of length 5 bits. These are mainly used to store and manipulate the data during the execution of instructions.
 * The last subfield is **func7** also referred as function 7. Here ‘7’ represents the size of the field. The function of func7 field is same as that of func3 field.
-
+---
 ### 2. I-type Instruction
 In RV32, each instruction is of size 32 bits. In I-type instruction, I stand for immediate which means that operations use Registers and Immediate value for their execution and are not related with memory location. This instruction type is used in immediate and load operations. The entire 32 bits instruction is divided into 5 fields as shown below.
 
@@ -221,7 +220,7 @@ In RV32, each instruction is of size 32 bits. In I-type instruction, I stand for
 * The next subfield is **func3** also referred as function 3. Here the ‘3’ represents the size of this field. This field tells the detail about the operation, i.e., the type of arithmetic and logical that is performed.
 * The next subfield is the source registers, **rs1** of length 5 bits. It is mainly used to store and manipulate the data during the execution of instructions.
 * The only difference between R-type and I-type is **rs2 and func7** field of R-type has been replaced by 12-bits signed immediate, **imm[11:0]**.
-
+---
 ### 3. S-type Instruction
 In RV32, each instruction is of size 32 bits. In S-type instruction, S stand for store which means it is store type instruction that helps to store the value of register into the memory. Mainly, this instruction type is used for store operations. The entire 32 bits instruction is divided into 6 fields as shown below.
 
@@ -229,7 +228,7 @@ In RV32, each instruction is of size 32 bits. In S-type instruction, S stand for
 * S-type instructions encode a 12-bit signed immediate, with the top seven bits **imm[11:5] in bits [31:25]** of the instruction and the lower five bits **imm[4:0] in bits [11:7]** of the instruction.
 * S-type instruction doesn’t have rd fields which states that these instructions are not used to write value to a register, but to write/store a value to a memory.
 * The value to be stored is defined in **rs1** field and address to which we have to store this value is calculated using **rs1 and immediate** field. The width of the operation and types of instruction is defined by **func3**, it can be a word, half-word or byte.
-
+---
 ### 4. B-type Instruction
 In RV32, each instruction is of size 32 bits. In B-type instruction, B stand for branching which means it is mainly used for branching based on certain conditions. The entire 32 bits instruction is divided into 8 fields as shown below.
 * The first field in the instruction format is known as opcode, also referred as operation code. The opcode is of length 7 bits and is used to determine the type of instruction format.
@@ -237,7 +236,7 @@ In RV32, each instruction is of size 32 bits. In B-type instruction, B stand for
 * There are two source registers **rs1 and rs2** on which various operations are performed based on certain conditions, and those conditions are defined by **func3** field.
 * After performing operations on the source register based on the conditions, it is evaluated that if the condition is true, Program Counter value gets updated by ```PC = Present PC Value + Immediate Value```, and if the condition is false then PC will be given as ```PC = Present PC value + 4 bytes```, which states that PC will move to next instruction set.
 * RV32 instructions are word-aligned, which means that address is always defined in the multiple of 4 bytes.
-
+---
 ### 5. U-type Instruction
 In RV32, each instruction is of size 32 bits. In U-type instruction, U stand for Upper Immediate instructions which means it is simply used to transfer the immediate data into the destination register. The entire 32 bits instruction is divided into 3 fields as shown below.
 
@@ -245,7 +244,7 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, U stand for
 * The U-type instruction only consists of two instructions, i.e., ```LUI``` and ```AUIPC```.
 * For Example, lets take the instruction **lui rd, imm** and understand this instruction.
 ```lui x15, 0x13579``` : This instruction will be executed and the immediate value 0x13579 will be written in the MSB of the rd x15, and it will look like x15 = 0x13579000.
-
+---
 ### 6. J-type Instruction
 In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for jump, which means that this instruction format is used to implement jump type instruction. The entire 32 bits instruction is divided into 6 fields as shown below.
 
@@ -253,7 +252,7 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 * The J-type instruction only consists of single instruction, ```JAL```.
 * J-type instruction encode 20 bits signed immediate which is divided into four fields.
 * The J-type instructions are often used to perform jump to the desired memory location. The address of the desired memory location is defined in the instruction. These instructions are also used to implement loops.
-
+---
 <b>*Refer to the following image for better understanding*</b>
 
 ![types of instructions](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%203/types%20of%20instructions.png)
@@ -275,7 +274,7 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 >* rd (destination) = a2 = x12 = 01100
 >* imm[31:12] = 0x1 (in binary: 0000 0000 0000 0000 0001)
 #### 32-bit instruction:```00000000000000000001_01100_0110111```
-
+---
 ### 2. ``` addi sp, sp, -16 ```
 * Explanation:
 >* The addi (Add Immediate) instruction adds an immediate value to the source register and stores the result in the destination register.
@@ -289,26 +288,25 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 >* func3 = 000
 >* imm[11:0] = -16 (in binary: 1111 1111 1111 0000)
 #### 32-bit instruction: ```111111111111_00010_000_00010_0010011```
-
-
-### Instruction: `addi a1, zero, 100`
-Explanation:
-* The `li` instruction is a **pseudo-instruction** in RISC-V. It is translated into an actual instruction (or a combination of instructions) by the assembler.
-- It belongs to the **I-type instruction set**.
-- a1 (x11) is the destination register.
-- zero (x0) is the source register, which always holds the value 0.
-- The immediate value is 100 (12 bits: 0000 0000 0110 0100)
-Instruction fields:
-- Opcode for addi = 0010011
-- rd (destination) = a1 = x11 = 01011
-- rs1 (source) = zero = x0 = 00000
-- func3 = `000`
-- imm[11:0] = `100` (in binary: `0000 0000 0110 0100`).
+---
+### 3. `addi a1, zero, 100`
+* Explanation:
+>* The `li` instruction is a **pseudo-instruction** in RISC-V. It is translated into an actual instruction (or a combination of instructions) by the assembler.
+>* It belongs to the **I-type instruction set**.
+>* a1 (x11) is the destination register.
+>* zero (x0) is the source register, which always holds the value 0.
+>* The immediate value is 100 (12 bits: 0000 0000 0110 0100)
+* Instruction fields:
+>* Opcode for addi = 0010011
+>* rd (destination) = a1 = x11 = 01011
+>* rs1 (source) = zero = x0 = 00000
+>* func3 = `000`
+>* imm[11:0] = `100` (in binary: `0000 0000 0110 0100`).
 
 #### 32-bit instruction:```000000001100_01011_000_00000_0010011```
 ---
 
-### 3. ``` sd ra, 8(sp) ```
+### 4. ``` sd ra, 8(sp) ```
 * Explanation:
 >* The sd (Store Doubleword) instruction stores a doubleword (64 bits) from a source register to memory.
 >* It belongs to the **```S-type```** instruction set.
@@ -323,21 +321,21 @@ Instruction fields:
 >* imm[11:5] = 0000000
 >* imm[4:0] = 01000
 #### 32-bit instruction: ``` 0000000_00001_00010_011_01000_0100011 ```
+---
 
-
-### 4. ``` jal ra, 1040c ```
+### 5. ``` jal ra, 1040c ```
 * EXplanation:
 >* The jal (Jump and Link) instruction jumps to a target address and saves the return address in the destination register.
 >* It belongs to the **```J-type```** instruction set.
 >* ra (x1) is the destination register.
 >* Target address offset = 1040c (adjusted relative offset: 0x40c in 21-bit signed format).
-* Instruction fields:
+* Intruction fields:
 >* Opcode for jal = 1101111
 >* rd (destination) = ra = x1 = 00001
 >* imm[20|10:1|11|19:12] = 0000 0000 1000 0011 0000
 #### 32-bit instruction:``` 00000001000000110000_00001_1101111 ```
-
-### 5. ```  ld ra, 8(sp) ```
+---
+### 6. ```  ld ra, 8(sp) ```
 * Explanation:
 >* The ld (Load Doubleword) instruction loads a doubleword (64 bits) from memory into the destination register.
 >* It belongs to the **```I-type```** instruction set.
@@ -351,9 +349,9 @@ Instruction fields:
 >* func3 = 011
 >* imm[11:0] = 8 (in binary: 0000 0000 1000)
 #### 32-bit instruction:``` 000000001000_00010_011_00001_0000011 ```
+---
 
-
-### 6. ``` auipc a5, 0xffff0 ```
+### 7. ``` auipc a5, 0xffff0 ```
 * Explanation:
 >* The auipc (Add Upper Immediate to PC) instruction adds a 20-bit immediate value to the current program counter (PC) and stores the result in the destination register.
 >* It belongs to the U-type instruction set.
@@ -364,8 +362,8 @@ Instruction fields:
 >* rd (destination) = a5 = x15 = 01111
 >* imm[31:12] = 0xffff0 (in binary: 1111 1111 1111 1111 0000)
 #### 32-bit instruction:```11111111111111110000_01111_0010111```
-
-### 7. ``` beqz a5, 100f8  ```
+---
+### 8. ``` beqz a5, 100f8  ```
 * Explanation:
 >* The beqz (Branch if Equal to Zero) instruction is a pseudo-instruction for beq a5, zero, offset.
 >* It checks if the value in a5 (x15) equals 0 and branches to the given offset if true.
@@ -380,9 +378,9 @@ Instruction fields:
 >* func3 = 000
 >* imm[12|10:5|4:1|11] = 1001111000 (split: imm[12]=1, imm[10:5]=00111, imm[4:1]=1000, imm[11]=0).
 #### 32-bit instruction: ```1_001111_1000_01111_000_00000_1100011 ```
+---
 
-
-### 8. ```j 101b4 ```
+### 9. ```j 101b4 ```
 * Explanation:
 >*  The j (Jump) instruction is a pseudo-instruction for jal zero, offset.
 >*  It unconditionally jumps to the target address while setting zero (x0) as the destination register (effectively discarding the link value).
@@ -394,8 +392,8 @@ Instruction fields:
 >*  imm[20|10:1|11|19:12] = 1011010010 (split: imm[20]=1, imm[10:1]=011010010, imm[11]=0, imm[19:12]=00000000).
 #### 32-bit instruction:``` 1_0000000_011010010_00000_1101111```
 
-
-### 9. ```sub a2, a2, a0```
+---
+### 10. ```sub a2, a2, a0```
 * Explanation:
 >* The sub (Subtract) instruction subtracts the value in the second source register (a0) from the value in the first source register (a2) and stores the result in the destination register (a2).
 >* It belongs to the ```**R-type**``` instruction set.
@@ -409,9 +407,9 @@ Instruction fields:
 >* func3 = 000
 >* func7 = 0100000
 #### 32-bit instruction: ```0100000_01010_01100_000_01100_0110011```
+---
 
-
-### 10. ```lw a0, 0(sp)```
+### 11. ```lw a0, 0(sp)```
 * Explanation:
 >* The lw (Load Word) instruction loads a word (32 bits) from memory into the destination register.
 >* It belongs to the **```I-type```** instruction set.
@@ -425,32 +423,37 @@ Instruction fields:
 >* func3 = 010
 >* imm[11:0] = 0 (in binary: 0000 0000 0000)
 #### 32-bit instruction:```000000000000_00010_010_01010_0000011```
+---
 
+### 12. ```lbu a5, 1944(gp)```
+* Explanation:
+>* The lbu (Load Byte Unsigned) instruction loads an 8-bit unsigned value from memory into the destination register.
+>* It belongs to the **`I-type`** instruction set.
+>* a5 (x15) is the destination register.
+>* gp (x3) is the base register.
+>* Immediate value = 1944 (in binary: 0111 1001 1000).
+* Instruction fields:
+>* Opcode for lbu = 0000011
+>* rd (destination) = a5 = x15 = 01111
+>* rs1 (base register) = gp = x3 = 00011
+>* func3 = 100
+>* imm[11:0] = 1944.
+#### 32-bit instruction:`01111001000_00011_100_01111_0000011`
 
-11. lbu a5, 1944(gp)
-Explanation:The lbu (Load Byte Unsigned) instruction loads an 8-bit unsigned value from memory into the destination register.
-It belongs to the I-type instruction set.
-a5 (x15) is the destination register.
-gp (x3) is the base register.
-Immediate value = 1944 (in binary: 0111 1001 1000).
-Instruction fields:Opcode for lbu = 0000011
-rd (destination) = a5 = x15 = 01111
-rs1 (base register) = gp = x3 = 00011
-func3 = 100
-imm[11:0] = 1944.
-32-bit instruction:01111001000_00011_100_01111_0000011
-
-
-12. jalr zero # 0 <main-0x100b0>
-Explanation:The jalr (Jump and Link Register) instruction jumps to an address calculated as rs1 + imm and stores the return address in the destination register.
+---
+### 13. `jalr zero`
+* Explanation:
+>* The jalr (Jump and Link Register) instruction jumps to an address calculated as rs1 + imm and stores the return address in the destination register.
 Here, the destination is zero (x0), effectively discarding the return address.
-imm = 0 and rs1 = zero (x0).
-Instruction fields:Opcode for jalr = 1100111
-rd (destination) = zero = x0 = 00000
-rs1 (source) = zero = x0 = 00000
-func3 = 000
-imm[11:0] = 0 (in binary: 0000 0000 0000).
-32-bit instruction:000000000000_00000_000_00000_1100111
-   
+>* imm = 0 and rs1 = zero (x0).
+* Instruction fields:
+>* Opcode for jalr = 1100111
+>* rd (destination) = zero = x0 = 00000
+>* rs1 (source) = zero = x0 = 00000
+>* func3 = 000
+>* imm[11:0] = 0 (in binary: 0000 0000 0000).
+#### 32-bit instruction:`000000000000_00000_000_00000_1100111`
+---
+
 
 </details>
