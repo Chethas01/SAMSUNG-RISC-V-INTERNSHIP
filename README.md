@@ -258,4 +258,28 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 
 ![types of instructions](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%203/types%20of%20instructions.png)
 
+## Now let's analyse each instruction given to us one by one
+
+### 1.  ``` lui a2, 0x1```
+* The lui (Load Upper Immediate) instruction is used to load a 20-bit immediate value into the upper 20 bits of the destination register.
+* It belongs to the <b>``` U-type ```</b> instruction set.
+* a2 (x12) is the destination register.
+* The immediate value is 0x1 (20 bits: 0000 0000 0000 0000 0001).
+* Instruction fields:Opcode for lui = 0110111
+* rd (destination) = a2 = x12 = 01100
+* imm[31:12] = 0x1 (in binary: 0000 0000 0000 0000 0001)
+## 32-bit instruction:```00000000000000000001_01100_0110111```
+
+### 2. ``` addi sp, sp, -16 ```
+* The addi (Add Immediate) instruction adds an immediate value to the source register and stores the result in the destination register.
+* It belongs to the <b>``` I-type ```</b> instruction set.
+* sp (x2) is both the source and destination register.
+* The immediate value is -16 (12-bit signed: 1111 1111 1111 0000).
+* Instruction fields:Opcode for addi = 0010011
+* rd (destination) = sp = x2 = 00010
+* rs1 (source) = sp = x2 = 00010
+* func3 = 000
+* imm[11:0] = -16 (in binary: 1111 1111 1111 0000)
+## 32-bit instruction: ```111111111111_00010_000_00010_0010011```
+
 </details>
