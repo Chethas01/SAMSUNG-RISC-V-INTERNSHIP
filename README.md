@@ -289,7 +289,7 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 >* imm[11:0] = -16 (in binary: 1111 1111 1111 0000)
 #### 32-bit instruction: ```111111111111_00010_000_00010_0010011```
 ---
-### 3. `addi a1, zero, 100`
+### 3. `li a1,100`
 * Explanation:
 >* The `li` instruction is a **pseudo-instruction** in RISC-V. It is translated into an actual instruction (or a combination of instructions) by the assembler.
 >* It belongs to the **I-type instruction set**.
@@ -303,7 +303,7 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 >* func3 = `000`
 >* imm[11:0] = `100` (in binary: `0000 0000 0110 0100`).
 
-#### 32-bit instruction:```000000001100_01011_000_00000_0010011```
+#### 32-bit instruction:`000000001100_01011_000_00000_0010011`
 ---
 
 ### 4. ``` sd ra, 8(sp) ```
