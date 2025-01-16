@@ -258,7 +258,11 @@ In RV32, each instruction is of size 32 bits. In U-type instruction, J stand for
 
 ![types of instructions](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%203/types%20of%20instructions.png)
 
-## Now let's analyse each instruction given to us one by one
+## Now let's analyse each instruction one by one:
+**Use the object dump command to get the instructions**
+![Obj dump](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%203/object%20dump.png)
+**Select the 15 unique instructions and write the 32 bit instruction code as shown below**
+
 
 ### 1.  ``` lui a2, 0x1```
 * Explanation:
