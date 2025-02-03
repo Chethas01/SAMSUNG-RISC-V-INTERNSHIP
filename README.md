@@ -561,6 +561,44 @@ Here, the destination is zero (x0), effectively discarding the return address.
 ## *Analysing the Output Waveform of various instructions that we have covered in TASK-3*  
 **```Instruction 1: ADD R6, R2, R1```**  
 
+![ADD]()
+
+**```Instruction 2: SUB R7, R1, R2```**  
+  
+![SUB]()
+
+**```Instruction 3: AND R8, R1, R3```**  
+
+![AND]()
+
+**```Instruction 4: OR R9, R2, R5```**  
+
+![OR]()
+
+**```Instruction 5: XOR R10, R1, R4```**  
+
+![XOR]()
+
+**```Instruction 6: SLT R1, R2, R4```**  
+
+![SLT]()
+
+**```Instruction 7: ADDI R12, R4, 5```**  
+
+![ADDI]()
+
+**```Instruction 8: BEQ R0, R0, 15```**  
+  
+![BEQ]()
+ 
+**```Instruction 9: SW R3, R1, 2```**
+
+![sw]()
+  
+**```Instruction 10: LW R13, R1, 2```**  
+
+![lw]()
+
 
 
 
