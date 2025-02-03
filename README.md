@@ -523,7 +523,7 @@ Here, the destination is zero (x0), effectively discarding the return address.
  
 #### All the instructions in the given verilog file is hard-coded. Hard-coded means that instead of following the RISCV specifications bit pattern, the designer has hard-coded each instructions based on their own pattern. Hence the 32-bits instruction that we generated in Task-3 will not match with the given instruction.  
   
-<img width="500" alt="Instructions" src="">
+<img width="500" alt="Instructions" src="https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/Instructions%20list.png">
   
 #### Following are the differences between standard RISCV ISA and the Instruction Set given in the reference repository:  
 
