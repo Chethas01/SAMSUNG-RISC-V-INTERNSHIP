@@ -490,3 +490,48 @@ Here, the destination is zero (x0), effectively discarding the return address.
 
 
 </details>
+
+<details>
+<summary><b>Task 4:</b> To perform an experiment of Functional Simulation and observe the waveforms of the instructions with the help of RISCV CORE, Netlist and Testbench. </summary>
+
+### About iverilog and gtkwave
+- Icarus Verilog is an implementation of the Verilog hardware description language.
+- GTKWave is a fully featured GTK+ v1. 2 based wave viewer for Unix and Win32 which reads Ver Structural Verilog Compiler generated AET files as well as standard Verilog VCD/EVCD files and allows their viewing.
+
+### Installing iverilog and gtkwave
+
+- **For Ubuntu**
+ 1. Open your terminal and type the following to install iverilog and GTKWave
+ ```
+ $   sudo apt update
+ $   sudo apt install iverilog gtkwave
+ ```
+2. Create a new directory with your name ```mkdir <your_name>```
+3. Create two files by using ```touch``` command as ```chethas_rv32i.v``` and ```chethas_rv32i_tb.v```  
+4. Copy the code from the [FILE](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/tree/main/Task%204/Code) and paste it in your verilog netlist and testbench files 
+  
+  
+5. To run and simulate the verilog code, enter the following command:  
+	```
+	$ iverilog -o chethas_rv32i.out chethas_rv32i_tb.v chethas_rv32i_tb.v
+	$ vvp chethas_rv32i.out
+	```
+6. To see the output simulation waveform in GTKWave, enter the name of dump file in the command:
+	```
+	$ gtkwave iiitb_rv32i.vcd
+	```
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</details>
