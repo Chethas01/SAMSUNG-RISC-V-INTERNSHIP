@@ -1,6 +1,8 @@
 # SAMSUNG-RISC-V-INTERNSHIP
 Samsung semiconductor research india's mini internship 2024 program where we learnt about RISC-V processor and VLSI Design using various open source tools.
 
+---
+
 ##  Basic Details
 
 **Name:** P Chethas  
@@ -8,6 +10,7 @@ Samsung semiconductor research india's mini internship 2024 program where we lea
 <br>
 **Email ID:** chethaspedu@gmail.com
 
+---
 <details>
 <summary><b>Task 1:</b> Task is to refer to C based and RISCV based lab videos and execute the task of compiling the C code using gcc and riscv compiler</summary>
 
@@ -91,9 +94,11 @@ Using the *cat* command, the entire C code will be displayed on the terminal.
 Here, the term *more aggressive optimization* in the context of compilers like GCC refers to a deeper and more complex set of transformations applied to the code in order to improve its performance and possibly reduce its size. The compiler uses more complex techniques that aims to generate faster executing code or code that occupies less memory. However, these optimizations typically increase the compilation time and can sometimes introduce bugs, making it harder to debug.
 </details>
 
+---
+
 <details>
 <summary><b>Task 2:</b> Performing SPIKE Simulation and Debugging the C code with Interactive Debugging Mode using Spike</summary> 
-
+	
 
   
 ### What is SPIKE in RISCV?
@@ -197,6 +202,8 @@ spike -d pk sum1ton.o
 ![Debugging](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%202/Images/debug.PNG) 
 
 </details>
+
+---
 
 <details>
 <summary><b>Task 3:</b> Task is to identify the type of instruction of all codes given with its exact 32 bits of instruction code in the desired instruction type format </summary>
@@ -490,6 +497,8 @@ Here, the destination is zero (x0), effectively discarding the return address.
 
 
 </details>
+
+---
 
 <details>
 <summary><b>Task 4:</b> To perform an experiment of Functional Simulation and observe the waveforms of the instructions with the help of RISCV CORE, Netlist and Testbench. </summary>
