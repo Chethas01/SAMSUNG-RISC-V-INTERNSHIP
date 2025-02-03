@@ -493,10 +493,11 @@ Here, the destination is zero (x0), effectively discarding the return address.
 
 <details>
 <summary><b>Task 4:</b> To perform an experiment of Functional Simulation and observe the waveforms of the instructions with the help of RISCV CORE, Netlist and Testbench. </summary>
-
+	
 ### About iverilog and gtkwave
 - Icarus Verilog is an implementation of the Verilog hardware description language.
 - GTKWave is a fully featured GTK+ v1. 2 based wave viewer for Unix and Win32 which reads Ver Structural Verilog Compiler generated AET files as well as standard Verilog VCD/EVCD files and allows their viewing.
+---
 
 ### Installing iverilog and gtkwave
 
@@ -521,9 +522,13 @@ Here, the destination is zero (x0), effectively discarding the return address.
 	$ gtkwave iiitb_rv32i.vcd
 	```
  
+ ---
+
+ 
 #### All the instructions in the given verilog file is hard-coded. Hard-coded means that instead of following the RISCV specifications bit pattern, the designer has hard-coded each instructions based on their own pattern. Hence the 32-bits instruction that we generated in Task-3 will not match with the given instruction.  
   
 <img width="500" alt="Instructions" src="https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/Instructions%20list.png">
+
   
 #### Following are the differences between standard RISCV ISA and the Instruction Set given in the reference repository:  
 
@@ -541,8 +546,10 @@ Here, the destination is zero (x0), effectively discarding the return address.
 |  LW R13, R1, 2  |  32'h0020a683  |  32'h00208681  |  
 |  SRL R16, R14, R2  |  32'h0030a123  |  32'h00271803  |
 |  SLL R15, R1, R2  |  32'h002097b3  |  32'h00208783  |  
+
+  ---
   
-#### *Analysing the Output Waveform of various instructions that we have covered in TASK-2*  
+## *Analysing the Output Waveform of various instructions that we have covered in TASK-3*  
 **```Instruction 1: ADD R6, R2, R1```**  
 
 
