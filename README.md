@@ -561,43 +561,43 @@ Here, the destination is zero (x0), effectively discarding the return address.
 ## *Analysing the Output Waveform of various instructions that we have covered in TASK-3*  
 **```Instruction 1: ADD R6, R2, R1```**  
 
-![ADD]()
+![ADD](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20add.PNG)
 
 **```Instruction 2: SUB R7, R1, R2```**  
   
-![SUB]()
+![SUB](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20SUB.PNG)
 
 **```Instruction 3: AND R8, R1, R3```**  
 
-![AND]()
+![AND](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20AND.PNG)
 
 **```Instruction 4: OR R9, R2, R5```**  
 
-![OR]()
+![OR](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20OR.PNG)
 
 **```Instruction 5: XOR R10, R1, R4```**  
 
-![XOR]()
+![XOR](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20XOR.PNG)
 
 **```Instruction 6: SLT R1, R2, R4```**  
 
-![SLT]()
+![SLT](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20SLT.PNG)
 
 **```Instruction 7: ADDI R12, R4, 5```**  
 
-![ADDI]()
+![ADDI](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20ADDI.PNG)
 
 **```Instruction 8: BEQ R0, R0, 15```**  
   
-![BEQ]()
+![BEQ](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20BEQ.PNG)
  
 **```Instruction 9: SW R3, R1, 2```**
 
-![sw]()
+![sw](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20SW.PNG)
   
 **```Instruction 10: LW R13, R1, 2```**  
 
-![lw]()
+![lw](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20LW.PNG)
 
 
 
