@@ -651,7 +651,7 @@ The code:
 - Initializes **GPIO pins** (PA0, PA1, PA2).  
 - Configures **TIM2 Timer for PWM output** on PA0.  
 - **Reads button states** and updates the **PWM duty cycle**.
-- Copy the code from here: [CODE](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/ea38d67cf7893658b15a3ffdf2f2358ddbf78ec8/Task%205/C_for_CH32V003X_using_MounRiver_IDE))
+- Copy the code from here: [CODE](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%205/codeforch32v.c)
 
 ### Installation & Usage  
 1. **Flash the code** onto the CH32V003X using **MounRiver Studio**.  
