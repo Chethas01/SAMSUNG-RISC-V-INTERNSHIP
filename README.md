@@ -650,7 +650,8 @@ This project demonstrates **PWM-based LED brightness control** using the **CH32V
 The code:  
 - Initializes **GPIO pins** (PA0, PA1, PA2).  
 - Configures **TIM2 Timer for PWM output** on PA0.  
-- **Reads button states** and updates the **PWM duty cycle**.  
+- **Reads button states** and updates the **PWM duty cycle**.
+- Copy the code from here: [CODE](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/tree/main/Task%205)
 
 ### Installation & Usage  
 1. **Flash the code** onto the CH32V003X using **MounRiver Studio**.  
