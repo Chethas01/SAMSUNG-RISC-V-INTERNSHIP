@@ -599,16 +599,74 @@ Here, the destination is zero (x0), effectively discarding the return address.
 
 ![lw](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%204/Waveforms/waveform%20LW.png)
 
+</details>
+
+---
+
+<details>
+<summary><b>Task 5:</b> To impliment any digital circuit using VSDsqadron Mini. </summary>
+	
+## PWM-Based LED Dimming using CH32V003X  
+
+### Overview  
+This project demonstrates **PWM-based LED brightness control** using the **CH32V003X RISC-V microcontroller**. Instead of simply turning an LED **ON or OFF**, we use **Pulse Width Modulation (PWM)** to smoothly adjust its brightness.  
+
+### Features  
+- **Button-controlled brightness**:  
+  - **Button 1 (PA1)** → Increases brightness  
+  - **Button 2 (PA2)** → Decreases brightness  
+- **Smooth LED dimming** using a PWM signal on **PA0**.  
+- **Debounce handling** for stable button presses.  
+- Uses **TIM2 timer module** to generate PWM.  
+
+### Components Required  
+- **CH32V003X Board**  
+- **LED** (Any color)  
+- **330Ω Resistor** (Current limiting for LED)  
+- **Push Buttons (x2)** (For brightness control)  
+- **10kΩ Resistors (x2)** (Pull-down for buttons)  
+- **Jumper Wires & Breadboard**  
+
+### Circuit Diagram  
+| Component | CH32V003X Pin |  
+|-----------|--------------|  
+| LED Anode (+) | PA0 (PWM Output) |  
+| LED Cathode (-) | GND (via 330Ω Resistor) |  
+| Button 1 (Increase Brightness) | PA1 (GPIO Input) |  
+| Button 2 (Decrease Brightness) | PA2 (GPIO Input) |  
+| Pull-down Resistors (10kΩ) | PA1, PA2 to GND |  
+
+### How It Works  
+1. **PWM Generation:** PA0 generates a PWM signal using **TIM2 Timer**.  
+2. **Button Input Handling:**  
+   - **PA1** increases the **PWM duty cycle** (brightness up).  
+   - **PA2** decreases the **PWM duty cycle** (brightness down).  
+3. **Brightness Control Logic:**  
+   - The duty cycle is kept between **0% and 100%**.  
+   - Each button press **increases or decreases by 10%**.  
+4. **Software Debouncing:** Prevents false triggers due to switch noise.  
+
+### Code Explanation  
+The code:  
+- Initializes **GPIO pins** (PA0, PA1, PA2).  
+- Configures **TIM2 Timer for PWM output** on PA0.  
+- **Reads button states** and updates the **PWM duty cycle**.  
+
+### Installation & Usage  
+1. **Flash the code** onto the CH32V003X using **MounRiver Studio**.  
+2. **Test the circuit**:  
+   - Press **Button 1** → LED gets **brighter**.  
+   - Press **Button 2** → LED gets **dimmer**.  
+
+### Future Enhancements  
+- **Add a potentiometer** for smooth brightness control.  
+- **Implement auto-dimming** for a breathing light effect.  
+- **Upgrade to RGB LED** with multi-channel PWM.  
+
+---
+
+**Author:** [P Chethas]  
 
 
 
-
-
-
-
-
-
-
-
- 
 </details>
