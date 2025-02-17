@@ -604,9 +604,9 @@ Here, the destination is zero (x0), effectively discarding the return address.
 ---
 
 <details>
-<summary><b>Task 5:</b> To impliment any digital circuit using VSDsqadron Mini. </summary>
+<summary><b>Task 5:</b> To impliment any PWM-Based LED Dimming circuit using VSDsqadron Mini. </summary>
 	
-# PWM-Based LED Dimming using CH32V003X  
+# PWM-Based LED Dimming using CH32V003X VSDsquadron mini  
 
 ## Overview  
 This project demonstrates **PWM-based LED brightness control** using the **CH32V003X RISC-V microcontroller**. Instead of simply turning an LED **ON or OFF**, we use **Pulse Width Modulation (PWM)** to smoothly adjust its brightness.  
@@ -660,6 +660,27 @@ The code:
 ---
 
 **Author:** [P Chethas]  
+
+</details>
+---
+<details>
+<summary><b>Task 6:</b>To build a fully working project of task 5 (PWM-Based LED Dimming) using the VSDsquadron mini</summary>
+
+## Installation and Flashing the code: 
+1. **Install the software**: Install the [Mounriver Studio](http://www.mounriver.com/download) from the official website.
+2. **Flash the code** onto the CH32V003X using **MounRiver Studio**.
+3. Follow these steps:
+   - Create a new project and select CH32V003F4P6.
+     ![NewProject](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%206/Newproject.PNG)
+   - Search for a `main.c` file in user folder or source folder and rewrite your code.
+   - Debug the code and check for errors. No errors should be present.
+     ![No errors](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%206/No%20errors.PNG)   
+   - Select build all project
+     ![Build project](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%206/Build%20project.png)
+   - Flash the code to the VSD.
+     ![Flash](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%206/Flash.png)
+4. **Test the circuit**:  
+   - Turn the potentiometer to adjust the **LED brightness** smoothly. 
 
 
 
