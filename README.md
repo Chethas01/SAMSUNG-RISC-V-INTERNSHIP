@@ -686,6 +686,11 @@ The code:
 4. **Test the circuit**:  
    - Turn the potentiometer to adjust the **LED brightness** smoothly. 
 
+## Circuit diagram of the connections:
+![Circuit diagram](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%206/Designer.png)
+
+## Working model demo:
+![Working Vedio]()
 
 
 </details>
