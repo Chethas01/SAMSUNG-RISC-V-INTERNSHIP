@@ -604,7 +604,7 @@ Here, the destination is zero (x0), effectively discarding the return address.
 ---
 
 <details>
-<summary><b>Task 5:</b> To impliment any PWM-Based LED Dimming circuit using VSDsqadron Mini. </summary>
+<summary><b>Task 5:</b> To impliment any digital circuit project using VSDsqadron Mini. </summary>
 	
 # PWM-Based LED Dimming using CH32V003X VSDsquadron mini  
 
