@@ -619,7 +619,7 @@ This project demonstrates **PWM-based LED brightness control** using the **CH32V
 - Uses **TIM2 timer module** to generate PWM.  
 
 ## Components Required  
-- **VSDSQUADRON MINI (CH32V003X Board)**  
+- **VSDSQUADRON (CH32V003X Board)**  
 - **LED** (Any color)  
 - **330Ω Resistor** (Current limiting for LED)  
 - **Potentiometer (10kΩ)** (For brightness control)  
