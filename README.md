@@ -662,7 +662,11 @@ The code:
 **Author:** [P Chethas]  
 
 </details>
+
+
 ---
+
+
 <details>
 <summary><b>Task 6:</b>To build a fully working project of task 5 (PWM-Based LED Dimming) using the VSDsquadron mini</summary>
 
