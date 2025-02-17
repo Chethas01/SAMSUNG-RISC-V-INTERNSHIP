@@ -690,7 +690,7 @@ The code:
 ![Circuit diagram](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%206/Designer.png)
 
 ## Working model demo:
-![Working Vedio]()
+[Watch my demo Vedio here!](https://github.com/Chethas01/SAMSUNG-RISC-V-INTERNSHIP/blob/main/Task%206/Chethas%20VSDSQ%20Mini.mp4)
 
 
 </details>
